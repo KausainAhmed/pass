@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Protected Site</title>
+    <style>
+        /* Hide main content initially */
+        #main-content {
+            display: none;
+        }
+
+        /* Styling for the password prompt */
+        #password-container {
+            text-align: center;
+            padding: 100px;
+        }
+
+        /* Add some basic styling to make the input and button look good */
+        input[type="password"] {
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        // Set your password here
+        var correctPassword = "kjss";
+
+        // Function to check the password and reveal content
+        function checkPassword() {
+            var enteredPassword = document.getElementById("password").value;
+            if (enteredPassword === correctPassword) {
+                // Hide the password prompt and show the content
+                document.getElementById("password-container").style.display = "none";
+                document.getElementById("main-content").style.display = "block";
+            } else {
+                alert("Incorrect password, please try again.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Password prompt area -->
+    <div id="password-container">
+        <h2>Enter Password to Access the Website</h2>
+        <input type="password" id="password" placeholder="Enter password" required>
+        <button onclick="checkPassword()">Submit</button>
+    </div>
+
+    <!-- Your actual website content (hidden initially) -->
+    <div id="main-content">
+        <h1>Manega nahi na tu</h1>
+        <p>Ab a hi gaya h to le apna award le k ja</p>
+        <img src="award.jpg">
+
+        <!-- Your existing website content goes here -->
+    </div>
+</body>
+</html>
